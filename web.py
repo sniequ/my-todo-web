@@ -2,12 +2,13 @@ import streamlit as st
 import functions
 
 todos = functions.get_todos()
-# tes
+
+st.set_page_config(layout="wide")
+
 def add_todo():
     todo = st.session_state["new_todo"] + "\n"
     todos.append(todo)
     functions.write_todos(todos)
-
 
 st.title("My todo app")
 st.subheader("Subheader test")
